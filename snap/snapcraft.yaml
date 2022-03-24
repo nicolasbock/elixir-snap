@@ -12,5 +12,12 @@ grade: stable
 confinement: strict
 
 parts:
-  my-part:
-    plugin: nil
+  elixir:
+    plugin: make
+    source: https://github.com/elixir-lang/elixir.git
+    source-tag: v1.10.0
+    make-parameters:
+      - clean
+      - test
+    build-snaps:
+      - erlang
