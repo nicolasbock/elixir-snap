@@ -19,5 +19,6 @@ parts:
     make-parameters:
       - clean
       - compile
+      - install
     build-snaps:
       - erlang
