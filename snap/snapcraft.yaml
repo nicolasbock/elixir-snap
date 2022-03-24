@@ -11,14 +11,22 @@ description: |
 grade: stable
 confinement: strict
 
+apps:
+  elixir:
+    command: usr/bin/elixir
+
 parts:
   elixir:
     plugin: make
     source: https://github.com/elixir-lang/elixir.git
     source-tag: v1.10.0
-    make-parameters:
-      - clean
-      - compile
-      - install
     build-snaps:
       - erlang
+    override-build: |
+      set -e -u -x
+
+      make clean
+      make compile
+      make install PREFIX=/usr DESTDIR=${SNAPCRAFT_PART_INSTALL}
+    stage:
+      - usr
