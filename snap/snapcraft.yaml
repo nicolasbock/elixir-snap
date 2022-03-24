@@ -18,6 +18,6 @@ parts:
     source-tag: v1.10.0
     make-parameters:
       - clean
-      - test
+      - compile
     build-snaps:
       - erlang
