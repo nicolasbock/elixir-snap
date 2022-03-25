@@ -14,6 +14,12 @@ confinement: strict
 apps:
   elixir:
     command: usr/bin/elixir
+  mix:
+    command: usr/bin/mix
+  elixirc:
+    command: usr/bin/elixirc
+  iex:
+    command: usr/bin/iex
 
 parts:
   elixir:
